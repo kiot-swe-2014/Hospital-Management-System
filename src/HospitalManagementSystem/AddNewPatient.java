@@ -4,7 +4,8 @@ package HospitalManagementSystem;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
+import  java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Software Engineers
@@ -29,10 +30,28 @@ package HospitalManagementSystem;
 
         jRadioButton1 = new javax.swing.JRadioButton();
         closeButton = new javax.swing.JButton();
+        pIdLabel = new javax.swing.JLabel();
+        pNameLabel = new javax.swing.JLabel();
+        pAgeLabel = new javax.swing.JLabel();
+        pSexLabel = new javax.swing.JLabel();
+        pPhoneLabel = new javax.swing.JLabel();
+        pAddressLabel = new javax.swing.JLabel();
+        pDiseaseLabel = new javax.swing.JLabel();
+        titleLabel = new javax.swing.JLabel();
+        pIdTextField = new javax.swing.JTextField();
+        pNameTextField = new javax.swing.JTextField();
+        pAgeTextField = new javax.swing.JTextField();
+        pSexComboBox = new javax.swing.JComboBox<>();
+        pAddressTextField = new javax.swing.JTextField();
+        pDeseaseTextField = new javax.swing.JTextField();
+        pPhoneTextField = new javax.swing.JTextField();
+        saveButton = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 255, 153));
+        setPreferredSize(new java.awt.Dimension(4665, 3468));
 
         closeButton.setBackground(new java.awt.Color(255, 51, 0));
         closeButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -43,21 +62,164 @@ package HospitalManagementSystem;
             }
         });
 
+        pIdLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pIdLabel.setText("Patient Id");
+
+        pNameLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pNameLabel.setText("Name");
+
+        pAgeLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pAgeLabel.setText("Age");
+
+        pSexLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pSexLabel.setText("Sex");
+
+        pPhoneLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pPhoneLabel.setText("Phone Number");
+
+        pAddressLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pAddressLabel.setText("Address");
+
+        pDiseaseLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pDiseaseLabel.setText("Any Major Deases Diagnosed Before");
+
+        titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(204, 0, 204));
+        titleLabel.setText("New Patient Registration Form");
+
+        pIdTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pIdTextFieldActionPerformed(evt);
+            }
+        });
+
+        pNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pNameTextFieldActionPerformed(evt);
+            }
+        });
+
+        pAgeTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pAgeTextFieldActionPerformed(evt);
+            }
+        });
+
+        pSexComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other" }));
+        pSexComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pSexComboBoxActionPerformed(evt);
+            }
+        });
+
+        pAddressTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pAddressTextFieldActionPerformed(evt);
+            }
+        });
+
+        pDeseaseTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pDeseaseTextFieldActionPerformed(evt);
+            }
+        });
+
+        pPhoneTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pPhoneTextFieldActionPerformed(evt);
+            }
+        });
+
+        saveButton.setBackground(new java.awt.Color(153, 153, 153));
+        saveButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        saveButton.setForeground(new java.awt.Color(51, 51, 255));
+        saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(1106, Short.MAX_VALUE)
-                .addComponent(closeButton)
-                .addGap(347, 347, 347))
+                .addContainerGap(782, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(saveButton)
+                            .addGap(239, 239, 239)
+                            .addComponent(closeButton)
+                            .addGap(61, 61, 61))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(pAddressLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(90, 90, 90)
+                                .addComponent(pAddressTextField))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(pDiseaseLabel)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(pIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pPhoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pAgeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pSexLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(pNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pPhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pAgeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pSexComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(pDeseaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(8, 8, 8)))
+                    .addComponent(titleLabel))
+                .addGap(585, 585, 585))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(257, 257, 257)
-                .addComponent(closeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(494, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addComponent(titleLabel)
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pIdLabel)
+                    .addComponent(pIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pNameLabel)
+                    .addComponent(pNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pPhoneLabel)
+                    .addComponent(pPhoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pAgeLabel)
+                    .addComponent(pAgeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pSexLabel)
+                    .addComponent(pSexComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pAddressLabel)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pAddressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)))
+                .addGap(34, 34, 34)
+                .addComponent(pDiseaseLabel)
+                .addGap(18, 18, 18)
+                .addComponent(pDeseaseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(closeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         pack();
@@ -68,6 +230,95 @@ package HospitalManagementSystem;
        new Home().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_closeButtonActionPerformed
 
+    private void pIdTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pIdTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pIdTextFieldActionPerformed
+
+    private void pAgeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pAgeTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pAgeTextFieldActionPerformed
+
+    private void pPhoneTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pPhoneTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pPhoneTextFieldActionPerformed
+
+    private void pNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pNameTextFieldActionPerformed
+
+    private void pAddressTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pAddressTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pAddressTextFieldActionPerformed
+
+    private void pDeseaseTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pDeseaseTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pDeseaseTextFieldActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+       
+        int pId;
+    try {
+        pId = Integer.parseInt(pIdTextField.getText());
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Invalid ID format. Please enter a numeric value.");
+        return;
+    }
+    
+       String pName=pNameTextField.getText();
+       
+       int pPhone;
+   try {
+        pPhone = Integer.parseInt(pPhoneTextField.getText());
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Invalid phone number format. Please enter a numeric value.");
+        return;
+    }
+       int numDigits = String.valueOf(Math.abs(pPhone)).length();
+      if(numDigits!=10) {
+      JOptionPane.showMessageDialog(null, "phone number must contain 10 digits Please try again");
+      }
+      
+       int pAge;
+    try {
+        pAge = Integer.parseInt(pAgeTextField.getText());
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Invalid age format. Please enter a numeric value.");
+        return;
+    }
+       
+       String pSex=(String) pSexComboBox.getSelectedItem();
+       String pAddress=pAddressTextField.getText();
+       String pDisease=pDeseaseTextField.getText();
+       
+       try{
+       String query="insert into patient values (?,?,?,?,?,?,?) ";
+       Connection connection =JDBCconn.startConnection();
+       PreparedStatement prepare=connection.prepareStatement(query);
+       
+       prepare.setInt(1, pId);
+       prepare.setString(2, pName);
+       prepare.setString(3, pPhone);
+       prepare.setInt(4, pAge);
+       prepare.setString(5, pSex);
+       prepare.setString(6, pAddress);
+       prepare.setString(7, pDisease);
+       prepare.executeUpdate();
+           JOptionPane.showMessageDialog(null, "patient registered successfuly");
+           setVisible(false);
+           new AddNewPatient().setVisible(true);
+           prepare.close();
+           connection.close();
+       }
+       catch(Exception e){
+    JOptionPane.showMessageDialog(null, "incorrect input please try again");
+       }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void pSexComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pSexComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pSexComboBoxActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -76,5 +327,21 @@ package HospitalManagementSystem;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton closeButton;
     private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JLabel pAddressLabel;
+    private javax.swing.JTextField pAddressTextField;
+    private javax.swing.JLabel pAgeLabel;
+    private javax.swing.JTextField pAgeTextField;
+    private javax.swing.JTextField pDeseaseTextField;
+    private javax.swing.JLabel pDiseaseLabel;
+    private javax.swing.JLabel pIdLabel;
+    private javax.swing.JTextField pIdTextField;
+    private javax.swing.JLabel pNameLabel;
+    private javax.swing.JTextField pNameTextField;
+    private javax.swing.JLabel pPhoneLabel;
+    private javax.swing.JTextField pPhoneTextField;
+    private javax.swing.JComboBox<String> pSexComboBox;
+    private javax.swing.JLabel pSexLabel;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
 }

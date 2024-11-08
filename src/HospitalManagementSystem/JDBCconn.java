@@ -6,49 +6,36 @@ package HospitalManagementSystem;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+
 
 /**
  *
  * @author Software Engineers
  */
-public class JDBCconn {
+ class JDBCconn {
     
-    public JDBCconn(){
-        startConnection();
+//    public JDBCconn(){
+//        startConnection();
+//    
+//}
     
-}
-    
-    public void startConnection(){
-        String JDBC_URL = "jdbc:mysql://localhost:3306/studentinformation";
-    String JDBC_USER = "root";
-     String JDBC_PASSWORD = "";  // No password
-
-        
-    
-        Connection connection = null;
-       
-
+    public static Connection startConnection(){
+        String JDBC_URL = "jdbc:mysql://localhost:3306/Hospital";
+        String JDBC_USER = "root";
+       String JDBC_PASSWORD = "";  // No password      
+   
         try {
             // Step 1: Register JDBC driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Step 2: Open a connection
-            System.out.println("Connecting to the database...");
-            connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+           
+          Connection  connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
 
-            // Step 3: Execute a query
+            return connection; 
           
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            // Step 5: Clean-up the environment
-            try {
-                
-                if (connection != null) connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+        } catch (Exception e) {
+        return null;
     }
 }
 }

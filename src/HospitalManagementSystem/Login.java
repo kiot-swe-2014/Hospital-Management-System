@@ -86,12 +86,13 @@ import javax.swing.JOptionPane;
         getContentPane().add(cancelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, -1, -1));
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        titleLabel.setForeground(new java.awt.Color(51, 51, 255));
         titleLabel.setText("Hospital Managment System");
         getContentPane().add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/HospitalManagementSystem/loginBG (2).jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1250, -1450, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1370, -1410, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

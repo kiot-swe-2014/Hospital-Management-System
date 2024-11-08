@@ -59,7 +59,7 @@ import javax.swing.JOptionPane;
                 addNewPatientRecordButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(addNewPatientRecordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 82, 300, 100));
+        getContentPane().add(addNewPatientRecordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 300, 100));
 
         addDiagnosisButton.setBackground(new java.awt.Color(255, 153, 153));
         addDiagnosisButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -71,7 +71,7 @@ import javax.swing.JOptionPane;
                 addDiagnosisButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(addDiagnosisButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 82, 310, 100));
+        getContentPane().add(addDiagnosisButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 310, 100));
 
         patientHistoryButton.setBackground(new java.awt.Color(204, 204, 255));
         patientHistoryButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -83,7 +83,7 @@ import javax.swing.JOptionPane;
                 patientHistoryButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(patientHistoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(901, 82, 300, 100));
+        getContentPane().add(patientHistoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 100, 300, 100));
 
         logoutButton.setBackground(new java.awt.Color(51, 0, 0));
         logoutButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -95,7 +95,7 @@ import javax.swing.JOptionPane;
                 logoutButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 490, 250, 100));
+        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 270, 250, 100));
 
         aboutButton.setBackground(new java.awt.Color(255, 255, 204));
         aboutButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -107,7 +107,7 @@ import javax.swing.JOptionPane;
                 aboutButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(aboutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 313, 250, 100));
+        getContentPane().add(aboutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 270, 250, 100));
 
         updateRecordButton.setBackground(new java.awt.Color(153, 153, 0));
         updateRecordButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -119,7 +119,7 @@ import javax.swing.JOptionPane;
                 updateRecordButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(updateRecordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1322, 82, 300, 100));
+        getContentPane().add(updateRecordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 270, 300, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/HospitalManagementSystem/loginBG (2).jpg"))); // NOI18N
         jLabel1.setText("jLabel1");

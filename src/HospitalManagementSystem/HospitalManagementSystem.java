@@ -32,7 +32,7 @@ package HospitalManagementSystem;
             }
         });
         
-      JDBCconn conn=new JDBCconn();
+     
         
         }
         
