@@ -52,6 +52,7 @@ import javax.swing.JOptionPane;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 153));
         setPreferredSize(new java.awt.Dimension(4665, 3468));
+        setResizable(false);
 
         closeButton.setBackground(new java.awt.Color(255, 51, 0));
         closeButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

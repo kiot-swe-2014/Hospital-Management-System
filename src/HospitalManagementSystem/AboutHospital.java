@@ -15,6 +15,7 @@ public class AboutHospital extends javax.swing.JFrame {
      */
     public AboutHospital() {
         initComponents();
+        aboutTextArea.setEditable(false);
     }
 
     /**
@@ -27,8 +28,11 @@ public class AboutHospital extends javax.swing.JFrame {
     private void initComponents() {
 
         closeButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        aboutTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(4665, 3468));
 
         closeButton.setBackground(new java.awt.Color(255, 0, 51));
         closeButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -39,21 +43,35 @@ public class AboutHospital extends javax.swing.JFrame {
             }
         });
 
+        aboutTextArea.setBackground(new java.awt.Color(255, 204, 255));
+        aboutTextArea.setColumns(20);
+        aboutTextArea.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        aboutTextArea.setRows(5);
+        aboutTextArea.setText("Welcome to [Hospital Name], a beacon of excellence in healthcare where compassion meets innovation.\n\nFor over [X years], we have been dedicated to providing comprehensive and high-quality medical services tailored to meet the diverse needs of our community.\n\nAt [Hospital Name], we believe in a patient-centric approach that combines advanced medical technology with a warm, personal touch. Our team of highly skilled \nphysicians, nurses, and healthcare professionals work tirelessly to ensure the well-being and comfort of each patient. From preventive care and routine checkups to \nspecialized treatments and complex surgeries, \n\nour facilities are equipped to handle a broad range of medical conditions with precision and care.\n\nWe take pride in fostering a healing environment that prioritizes safety, dignity, and respect. Our state-of-the-art infrastructure and commitment to continuous \nimprovement empower us to stay at the forefront of medical advancements. Moreover, we offer a variety of supportive services including counseling, rehabilitation, \nand patient education to guide you every step of the way on your path to recovery.\n\nWhether you are visiting us for a short appointment or an extended stay, [Hospital Name] is devoted to making your experience as comfortable and reassuring as possible. \nThank you for trusting us with your health. \n\nYour well-being is our highest priority.\n\n");
+        jScrollPane1.setViewportView(aboutTextArea);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(1057, Short.MAX_VALUE)
-                .addComponent(closeButton)
-                .addGap(471, 471, 471))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(closeButton)
+                        .addGap(398, 398, 398))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1549, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(228, 228, 228))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(293, 293, 293)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(closeButton)
-                .addContainerGap(335, Short.MAX_VALUE))
+                .addGap(147, 147, 147))
         );
 
         pack();
@@ -68,39 +86,11 @@ public class AboutHospital extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AboutHospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AboutHospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AboutHospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AboutHospital.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AboutHospital().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea aboutTextArea;
     private javax.swing.JButton closeButton;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
