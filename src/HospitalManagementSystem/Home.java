@@ -129,7 +129,9 @@ import javax.swing.JOptionPane;
     }// </editor-fold>//GEN-END:initComponents
 
     private void patientHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientHistoryButtonActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);    
+        new FullPatientHistory().setVisible(true);
+// TODO add your handling code here:
     }//GEN-LAST:event_patientHistoryButtonActionPerformed
 
     private void addNewPatientRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewPatientRecordButtonActionPerformed
@@ -143,7 +145,8 @@ import javax.swing.JOptionPane;
     }//GEN-LAST:event_addDiagnosisButtonActionPerformed
 
     private void updateRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateRecordButtonActionPerformed
-        // TODO add your handling code here:
+     setVisible(false);     
+        new UpdatePatientRecord().setVisible(true);   // TODO add your handling code here:
     }//GEN-LAST:event_updateRecordButtonActionPerformed
 
     private void aboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutButtonActionPerformed

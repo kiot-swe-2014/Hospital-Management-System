@@ -213,8 +213,8 @@ import javax.swing.table.DefaultTableModel;
                 .addGap(31, 31, 31)
                 .addComponent(errorLabel)
                 .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(symptomLabel)
                     .addComponent(symptomTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -335,7 +335,7 @@ import javax.swing.table.DefaultTableModel;
         
         ResultSet result = preparedStatement.executeQuery();
         
-        String[] columnNames = {"patientId", "patientName","patientPhone","patientAge","patientSex","patientAddress","patientDisease"};
+        String[] columnNames = {"Id", "Name","Phone Number","Age","Sex","Address","Any Disease"};
         DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
         if (!result.isBeforeFirst()) { // Checks if ResultSet is empty
             errorLabel.setVisible(true);

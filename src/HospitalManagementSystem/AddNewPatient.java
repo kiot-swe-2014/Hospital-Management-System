@@ -266,17 +266,9 @@ import javax.swing.JOptionPane;
     
        String pName=pNameTextField.getText();
        
-       int pPhone;
-   try {
-        pPhone = Integer.parseInt(pPhoneTextField.getText());
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(null, "Invalid phone number format. Please enter a numeric value.");
-        return;
-    }
-       int numDigits = String.valueOf(Math.abs(pPhone)).length();
-      if(numDigits!=10) {
-      JOptionPane.showMessageDialog(null, "phone number must contain 10 digits Please try again");
-      }
+       
+       String pPhone = pPhoneTextField.getText();
+    
       
        int pAge;
     try {
