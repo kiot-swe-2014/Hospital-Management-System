@@ -43,13 +43,13 @@ import javax.swing.JOptionPane;
 
         headerLabel.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         headerLabel.setForeground(new java.awt.Color(0, 204, 204));
-        headerLabel.setText("Welcome to Hospital Management System");
-        getContentPane().add(headerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 0, 1006, -1));
+        headerLabel.setText("Welcome to Hospital Management System--- ADMIN");
+        getContentPane().add(headerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 0, 1250, -1));
 
         addNewPatientRecordButton.setBackground(new java.awt.Color(0, 204, 153));
         addNewPatientRecordButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         addNewPatientRecordButton.setForeground(new java.awt.Color(255, 51, 255));
-        addNewPatientRecordButton.setText("Add New Record");
+        addNewPatientRecordButton.setText("Add New Patient");
         addNewPatientRecordButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 204), new java.awt.Color(204, 204, 0), new java.awt.Color(0, 0, 204), new java.awt.Color(153, 0, 153)));
         addNewPatientRecordButton.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/HospitalManagementSystem/addPatientRecordIcon.png"))); // NOI18N
         addNewPatientRecordButton.setIconTextGap(2);
@@ -59,31 +59,31 @@ import javax.swing.JOptionPane;
                 addNewPatientRecordButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(addNewPatientRecordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 300, 100));
+        getContentPane().add(addNewPatientRecordButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 300, 100));
 
-        addDiagnosisButton.setBackground(new java.awt.Color(255, 153, 153));
+        addDiagnosisButton.setBackground(new java.awt.Color(51, 51, 255));
         addDiagnosisButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         addDiagnosisButton.setForeground(new java.awt.Color(204, 0, 204));
-        addDiagnosisButton.setText("Add Diagnosis Information");
+        addDiagnosisButton.setText("Add User");
         addDiagnosisButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 0, 204)));
         addDiagnosisButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addDiagnosisButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(addDiagnosisButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, 310, 100));
+        getContentPane().add(addDiagnosisButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 310, 100));
 
         patientHistoryButton.setBackground(new java.awt.Color(204, 204, 255));
         patientHistoryButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         patientHistoryButton.setForeground(new java.awt.Color(204, 0, 204));
-        patientHistoryButton.setText("Full History of Patient");
+        patientHistoryButton.setText("Manage User");
         patientHistoryButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(204, 0, 204)));
         patientHistoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 patientHistoryButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(patientHistoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 100, 300, 100));
+        getContentPane().add(patientHistoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 90, 300, 100));
 
         logoutButton.setBackground(new java.awt.Color(51, 0, 0));
         logoutButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -128,12 +128,6 @@ import javax.swing.JOptionPane;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void patientHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientHistoryButtonActionPerformed
-        setVisible(false);    
-        new FullPatientHistory().setVisible(true);
-// TODO add your handling code here:
-    }//GEN-LAST:event_patientHistoryButtonActionPerformed
-
     private void addNewPatientRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewPatientRecordButtonActionPerformed
         setVisible(false);     
         new AddNewPatient().setVisible(true);// TODO add your handling code here:
@@ -141,7 +135,7 @@ import javax.swing.JOptionPane;
 
     private void addDiagnosisButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDiagnosisButtonActionPerformed
        setVisible(false);     
-        new AddDiagnosisInfo().setVisible(true);// TODO add your handling code here: // TODO add your handling code here:
+        new User().setVisible(true);// TODO add your handling code here: // TODO add your handling code here:
     }//GEN-LAST:event_addDiagnosisButtonActionPerformed
 
     private void updateRecordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateRecordButtonActionPerformed
@@ -161,6 +155,12 @@ int select=JOptionPane.showConfirmDialog(this,"Do you want logout from Home", "s
       new Login().setVisible(true);
   }        // TODO add y        // TODO add your handling code here:
     }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void patientHistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientHistoryButtonActionPerformed
+        setVisible(false);
+        new ManageUser().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_patientHistoryButtonActionPerformed
 
     /**
      * @param args the command line arguments

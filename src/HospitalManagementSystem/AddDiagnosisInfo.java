@@ -74,6 +74,8 @@ import javax.swing.table.DefaultTableModel;
         toSearchIdLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         toSearchIdLabel.setText("Patient ID");
 
+        toSearchIdTextField.setText("4");
+
         searchButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         searchButton.setText("Search");
         searchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -249,7 +251,7 @@ import javax.swing.table.DefaultTableModel;
 
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         setVisible(false);
-        new Home().setVisible(true);        // TODO add your handling code here:
+        new DoctorPage().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_closeButtonActionPerformed
 
     private void isWardCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isWardCheckBoxActionPerformed
@@ -294,7 +296,7 @@ import javax.swing.table.DefaultTableModel;
              wardType="---";
         }   
         try{
-       String query="insert into patientinformation values (?,?,?,?,?,?) ";
+       String query="insert into patientinformation(patientId,symptom,diagnosis,medicine,wardRequired,wardType) values (?,?,?,?,?,?) ";
        Connection connection =JDBCconn.startConnection();
        PreparedStatement prepare=connection.prepareStatement(query);
        

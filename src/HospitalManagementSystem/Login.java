@@ -4,6 +4,7 @@
  */
 package HospitalManagementSystem;
 
+import java.sql.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -113,13 +114,49 @@ import javax.swing.JOptionPane;
     }//GEN-LAST:event_passwordFieldActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-   if(userNameTextField.getText().equals("SEID") && passwordField.getText().equals("seid") )   
-   {
-       setVisible(false);
-       new Home().setVisible(true);
-   }
-   else
-       JOptionPane.showMessageDialog(null, "incorrect user name or password please try again");
+  
+        String userName = userNameTextField.getText();
+        String password = passwordField.getText(); // Consider using `passwordField.getPassword()` for better security
+        System.out.println("password: "+ password);
+    String query = "SELECT * FROM users WHERE userName = ?";
+
+    try (Connection connection = JDBCconn.startConnection();
+         PreparedStatement prepare = connection.prepareStatement(query)) {
+
+        prepare.setString(1, userName);
+        ResultSet rs = prepare.executeQuery();
+
+        if (rs.next()) {
+            String dbPassword = rs.getString("pasword");
+            String dbRole = rs.getString("role");
+
+            // Use a secure password hashing and comparison method here
+            if (password.equals(dbPassword)) {
+                switch (dbRole) {
+                    case "ADMIN":
+                        this.setVisible(false);
+                        new Home().setVisible(true);
+                        break;
+                    case "DOCTOR":
+                        this.setVisible(false);
+                        new DoctorPage().setVisible(true);
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Role not recognized");
+                        break;
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Incorrect password. Please try again.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "User name not found. Please try again.");
+        }
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
+    }
+      
+  
+      
 // TODO add your handling code here:
     }//GEN-LAST:event_loginButtonActionPerformed
 

@@ -141,7 +141,7 @@ public class FullPatientHistory extends javax.swing.JFrame {
 
     private void closeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeButtonActionPerformed
         setVisible(false);    
-        new Home().setVisible(true);// TODO add your handling code here:
+        new DoctorPage().setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_closeButtonActionPerformed
 
     private void showButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showButtonActionPerformed
@@ -149,7 +149,7 @@ public class FullPatientHistory extends javax.swing.JFrame {
                         + "patient.patientAge,patient.patientSex,patient.patientAddress,patient.patientDisease,"
                         + "patientinformation.symptom,patientinformation.diagnosis,patientinformation.medicine,patientinformation.wardRequired,"
                         + "patientinformation.wardType"
-                        + " FROM patient INNER JOIN patientinformation ON patient.patientId = patientinformation.pID";
+                        + " FROM patient INNER JOIN patientinformation ON patient.patientId = patientinformation.patientId";
 
     try (Connection connection = JDBCconn.startConnection();
          PreparedStatement preparedStatement = connection.prepareStatement(query);
